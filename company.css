@@ -1,0 +1,725 @@
+
+
+header ul{
+display: flex;
+justify-content: space-between;
+}
+
+header a{
+    color: #000;
+font-family: Inter;
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+position: relative;
+}
+
+.menu{
+  opacity: 0;
+}
+
+.menu-btn{
+  display: none;
+}
+
+.navtext{
+  display: none;
+}
+
+
+@media screen and (max-width: 1208px) {
+.navi{
+  display: none;
+}
+
+
+/* Navbar & Navmenu color */
+:root {
+  --background-navbar: rgba(55, 55, 55, 0.98);
+}
+
+.header {
+  background: var(--background-navbar);
+  position: fixed;
+  width: 100%;
+  height: 52px;
+}
+
+.menu {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 200px;
+  padding: 0 0 10px 0;
+  clear: both;
+  background: var(--background-navbar);
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  transform: scale(1, 0);
+  transform-origin: top;
+  opacity: 0;
+  z-index: 9999;
+}
+
+/* Hamburger menu button */
+.menu-btn:checked ~ .menu {
+  transform: scale(1, 1);
+  transform-origin: top;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+/* Hamburger menbu text */
+.menu a {
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ddd;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.menu li {
+  border-top: 1px solid rgb(75, 75, 75);
+  padding: 15px 0;
+  margin: 0 54px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.menu-btn:checked ~ .menu a,
+.menu-btn:checked ~ .menu li,
+.menu-btn:checked ~ .menu
+{
+  opacity: 1;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+}
+
+.menu-btn {
+  display: none;
+}
+  
+
+.menu-icon {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 24px 14px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
+}
+
+.navicon {
+  background: black;
+  display: block;
+  height: 3px;
+  width: 26px;
+  position: relative;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+.navicon:before,
+.navicon:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: black;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+.navicon:before {
+  top: 9px;
+}
+
+.navicon:after {
+  bottom: 9px;
+}
+
+/* Hamburger Menu Animation Start */
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+  top: 0;
+}
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  bottom: 0;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: rgba(0, 0, 0, 0);
+  transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+/* Hamburger Menu Animation End */
+
+/* Navbar Container */
+.navtext-container {
+  width: 100%;
+  height: 52px;
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar Text */
+.navtext {
+  position: absolute;
+  text-transform: uppercase;
+ opacity: 0;
+
+}
+
+
+}
+
+
+
+
+
+
+
+header a::after,.viewmore::after{
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    bottom: -1px;               /*アンダーラインがaタグの下端から現れる*/
+    transform: scale(0, 1);     /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: left top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+    transition: transform 0.3s; /*変形の時間*/
+    }
+    
+header a:hover::after,.viewmore:hover::after{
+    transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+    }
+
+.navi{
+ padding: 10px;
+ margin-top: 50px;
+ margin-right: 20px;
+}
+
+.headerlogo{
+    margin-right: 20px;
+}
+
+#main{
+    background-image: url(image/main.png);
+    height:1000px ;
+width: 100%;
+flex-shrink: 0;
+position:relative;
+background-size: cover;
+}
+
+#main img{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+}
+
+@media screen and (max-width: 800px) {
+  #main{
+    background-image: url(image/mainphone.png);
+    height:1000px ;
+width: 100%;
+height: 400px;
+object-fit: cover;
+flex-shrink: 0;
+position:relative;
+background-size: cover;
+}
+
+#main img{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+}
+
+}
+
+
+
+
+
+.kigyoulogo {
+    margin-top: 100px;
+}
+
+.kigyoulogo p{
+    color: #000;
+font-family: Inter;
+font-size: 2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: center;
+}
+
+.kigyoulogo ul {
+  display: flex;
+  justify-content: space-between;
+}
+.slides{
+  display: flex;
+  overflow: hidden;
+}
+.slide1{
+  animation: loop-slide 30s linear infinite;
+}
+.slide2{
+  animation: loop-slide 30s 1s linear infinite;
+}
+@keyframes loop-slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.kigyoulogo img{
+    width: 350px;
+    height: 200px;
+}
+
+
+
+section{
+    margin-top: 10%;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s; 
+  }
+  
+  section.on{
+    transform: translateY(0);
+    opacity: 1.0;
+  }
+  
+
+  h1{
+    color: #000;
+    font-family: Inter;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .viewmore{
+    margin-top: 20px;
+    font-size: 2rem;
+    position: absolute;
+    left: 70%;
+  }
+
+
+
+  .newsphoto img{
+    margin-top: 40px;
+    width: 600px;
+height: 350px;
+  }
+
+  .news p{
+    margin-top: 20px;
+    color: #000;
+    font-family: Inter;
+    font-size:2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .tabu{
+    height: 260px;
+  }
+  .tabu img{
+    padding: 20px;
+    margin-top: 200px;
+  }
+
+
+  .wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-right: 23%;
+    margin-top: 50px;
+  }
+  .wrap p{
+    margin-top: 10px;
+    color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 400;
+line-height: 2.8;
+  }
+
+  .digital img,.sasutena img,.global img{
+    width: 724px;
+height: 522px;
+flex-shrink: 0;
+  }
+
+
+
+  .wraptop{
+    text-align: center;
+font-family: Inter;
+font-size: 2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  position: relative;
+  color: #333;
+  display: inline-block;
+  text-shadow: 0 0 2px white;
+}
+.wraptop:before {
+  content: "";
+  position: absolute;
+  background: #a9e1ff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 50%;
+  border: dashed 1px white;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  box-shadow: 0px 0px 0px 5px #a9e1ff;
+}
+
+
+
+  @media screen and (max-width: 800px) {
+
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .digitaltab,
+    .globaltab {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+
+  
+    .digital img
+    .global img,
+    .recruit img {
+      width: 100%; /* 画面幅いっぱいに広がるように調整 */
+      height: auto;
+    }
+  
+    .digitaltab img,
+    .globaltab img
+   {
+      width: 80%; /* 画面幅の80%に設定 */
+      height: auto;
+      position: relative; /* 追加 */
+      z-index: 1; /* 追加 */
+    }
+
+    .wraptop{
+      margin-top: 20%;
+    }
+  
+    .digitaltab p,
+    .globaltab p {
+      margin-top: 10px;
+    }
+
+    .sasutenatab p {
+      font-size: 0.8rem;
+    }
+
+    .recruittab img{
+      margin-bottom: 5%;
+    }
+
+
+    #sasutenawrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .sasutenatab {
+      order: 2; /* 二番目に表示 */
+      
+    }
+    
+    .sasutenatab img {
+      width: 100%; /* 画面幅いっぱいに広がるように */
+      height: auto;
+    }
+    
+    .sasutenatab p {
+      margin-top: 10px;
+      color: #000;
+      font-family: Inter;
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 2.8;
+      text-align: center;
+    }
+    
+    .sasutenatab img,
+    .sasutenatab p {
+      width: 80%; /* 画面幅の80%に設定 */
+      height: auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .sasutenatab img {
+      margin-top: 20px;
+    }
+    
+    .sasutenatab p {
+      margin-top: 10px;
+    }
+    
+    .sasutenatab p {
+      margin-top: 10px;
+    }
+    
+    .sasutenatab img,
+    .sasutenatab p {
+      width: 80%; /* 画面幅の80%に設定 */
+      height: auto;
+      position: relative;
+      z-index: 1;
+    }
+}
+
+.recruit{margin-left: 10%;}
+
+
+  .recruittab{
+    transition: transform .4s ease; 
+  }
+
+
+  .recruittab:hover{
+    transform: scale(1.1);
+  }
+
+
+
+  footer{
+    margin-top: 20%;
+    padding: 20px;
+    background-color: #D3EEB8;;
+  }
+
+
+  footer div{
+    display: flex;
+    justify-content: space-between;
+    /* margin-left: 6%;
+    margin-right: 6%; */
+    border-left: 1px solid;
+    /* width: 90%; */
+    
+    /* 追加 */
+    width: 100%;
+  }
+
+  footer div:nth-of-type(1){
+    border-left: none;
+  }
+
+  footer li{
+    width: fit-content;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 10px;
+    /* margin-left: 4%; */
+  }
+
+  .topics,.footertab li a{
+    margin-top: 20px;
+    color: #000;
+font-family: Inter;
+font-size: 1.8rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+
+  footer a{
+    position: relative;
+  }
+
+  footer a::after{
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    bottom: -1px;               /*アンダーラインがaタグの下端から現れる*/
+    transform: scale(0, 1);     /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: left top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+    transition: transform 0.2s; /*変形の時間*/
+    }
+    
+footer a:hover::after{
+    transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+    }
+
+.sns{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.sns img{
+  width: 70px;
+  height: 70px;
+}
+
+/* 追加 */
+.footerwrap ul{
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1596px) {
+.topics2{
+  display: none;
+}
+
+/* .footer1,.footer2,.footertab{
+  margin-top: 5%
+} */
+
+.footertab a{
+  font-size: 0.8rem;
+}
+
+}
+
+@media screen and (max-width: 1024px) {
+  .footer1,.footer2{
+    display: none;
+    
+  }
+  footer div:nth-of-type(3){
+    border-left: none;
+  }
+
+  .footertab{
+width:400px;
+margin-left: auto;
+margin-right: auto;
+  }
+
+
+}
+
+
+/*newsのスライダー*/
+.news ul{
+  margin-top: 50px;
+background-color:#D9D9D9;
+}
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+     margin:0 auto;
+ }
+ 
+ .slider img {
+     width:100%;/*スライダー内の画像を横幅100%に*/
+     height:auto;
+ }
+ 
+ /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+ 
+ .slider .slick-slide {
+     margin:0 10px;
+ }
+ 
+ /*矢印の設定*/
+ 
+ /*戻る、次へ矢印の位置*/
+ .slick-prev, 
+ .slick-next {
+     position: absolute;/*絶対配置にする*/
+     top: 42%;
+     cursor: pointer;/*マウスカーソルを指マークに*/
+     outline: none;/*クリックをしたら出てくる枠線を消す*/
+     border-top: 2px solid #666;/*矢印の色*/
+     border-right: 2px solid #666;/*矢印の色*/
+     height: 20px;
+     width: 20px;
+ }
+ 
+ .slick-prev {/*戻る矢印の位置と形状*/
+     left: -1.5%;
+     transform: rotate(-135deg);
+ }
+ 
+ .slick-next {/*次へ矢印の位置と形状*/
+     right: -1.5%;
+     transform: rotate(45deg);
+ }
+ 
+ /*ドットナビゲーションの設定*/
+ 
+ .slick-dots {
+     text-align:center;
+   margin:20px 0 0 0;
+ }
+ 
+ .slick-dots li {
+     display:inline-block;
+   margin:0 5px;
+ }
+ 
+ .slick-dots button {
+     color: transparent;
+     outline: none;
+     width:8px;/*ドットボタンのサイズ*/
+     height:8px;/*ドットボタンのサイズ*/
+     display:block;
+     border-radius:50%;
+     background:#ccc;/*ドットボタンの色*/
+ }
+ 
+ .slick-dots .slick-active button{
+     background:#333;/*ドットボタンの現在地表示の色*/
+ }
+
+
+ 

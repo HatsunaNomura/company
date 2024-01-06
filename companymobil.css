@@ -1,0 +1,44 @@
+@media screen and (max-width: 428px) {
+
+    /* フォントサイズを可変に設定 */
+    body {
+      font-size: 2.25rem;
+    }
+  
+
+    .navi {
+      display: none;
+    }
+
+    .kigyoulogo{
+      display: none;
+    }
+  
+ 
+    header .headerlogo {
+      margin-right: auto;
+    }
+  
+    /* class="news" の表示枚数を1枚に変更 */
+    .news .slider {
+      display: block;
+    }
+  
+    .news .slider li {
+      display: block;
+      width: 100%;
+    }
+  
+    /* class="wrap" を縦並びに変更 */
+    .wrap {
+      flex-direction: column;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    /* footerのフォントサイズを小さく */
+    footer li, .footertab li a {
+      font-size: 1.25rem;
+    }
+  
+  }
